@@ -119,7 +119,7 @@ fi
     --standalone \
     "${SERVER}" \
     --email "${EMAIL}" --agree-tos \
-    --expand " > /etc/nginx/lets
+    --expand --quiet" > /etc/nginx/lets
     /bin/bash /etc/nginx/lets
   fi
 
@@ -139,7 +139,7 @@ echo "${DOMAIN}" > /etc/letsencrypt/san_list
     ${letscmd} \
     "${SERVER}" \
     --email "${EMAIL}" --agree-tos \
-    --expand
+    --expand --quiet
 
   # Reload nginx configuration to pick up the reissued certificates
   /usr/sbin/nginx -s reload
